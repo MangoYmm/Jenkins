@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+            stage('begin to be  ready for pulling code') {
+            steps {
+                echo '开始准备去拉取代码'
+            }
+        }
+        stage('pull') {
+            steps {
+                echo '开始拉取代码'
+            }
+        }
+        stage('finish pulling code') {
+            steps {
+                echo '完成拉取代码'
+            }
+        }
+    }
+    post{
+        success {
+        echo '成功了'
+        }
+        always {
+            echo 'goodbye'
+        }
+
+    }
+}
